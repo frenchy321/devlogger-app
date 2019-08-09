@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { LogService } from '../../services/log.service';
 import { Log } from '../../models/log';
 
 @Component({
@@ -10,7 +10,12 @@ import { Log } from '../../models/log';
 export class LogsComponent implements OnInit {
   logs: Log[];
 
-  constructor() {}
+  constructor(private logService: LogService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.logs = this.logService.getLogs();
+  }
+  onSelect(log: Log) {
+    console.log(log);
+  }
 }
