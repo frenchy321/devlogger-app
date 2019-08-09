@@ -27,4 +27,8 @@ export class LogService {
       }
     ];
   }
+
+  getLogs() {
+    return this.logs;
+  }
 }
