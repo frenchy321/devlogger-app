@@ -12,16 +12,21 @@ export class LogFormComponent implements OnInit {
   text: string;
   date: any;
 
+  isNew: boolean = true;
+
   constructor(private logService: LogService) {}
 
   ngOnInit() {
     // subscribe to the selectedlog observable
     this.logService.selectedLog.subscribe(log => {
       if (log.id !== null) {
+        this.isNew = false;
         this.id = log.id;
         this.text = log.text;
         this.date = log.date;
       }
     });
   }
+
+  onSubmit() {}
 }
