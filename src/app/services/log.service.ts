@@ -58,4 +58,12 @@ export class LogService {
     });
     this.logs.unshift(log);
   }
+
+  deleteLog(log: Log) {
+    this.logs.forEach((curr, index) => {
+      if (log.id === curr.id) {
+        this.logs.splice(index, 1);
+      }
+    });
+  }
 }
