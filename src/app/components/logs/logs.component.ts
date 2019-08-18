@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LogService } from '../../services/log.service';
 import { Log } from '../../models/log';
-import { Subscriber } from 'rxjs';
 
 @Component({
   selector: 'app-logs',
